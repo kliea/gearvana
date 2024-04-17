@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
-import { Card, Button } from 'flowbite-react';
+import { Card, Button, Label, Textarea } from 'flowbite-react';
 import InputField from '../components/InputField';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,6 +24,10 @@ export default function Signup() {
 								type='string'
 								placeholder='Enter your full name'
 							/>
+							<div>
+								<Label className='text-white'>Address</Label>
+								<Textarea />
+							</div>
 							<InputField
 								name='Birth Date'
 								type='date'
