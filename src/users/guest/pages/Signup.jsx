@@ -1,44 +1,55 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
 import { Card, Label, TextInput, Checkbox, Button } from 'flowbite-react';
+import InputField from '../components/InputField';
 
 export default function Signup() {
 	return (
 		<main className='min-h-screen flex flex-col'>
-			<TopBar />
+			<TopBar isDisabled={false} />
 			<div className='flex-1 flex justify-center items-center '>
 				<Card className='px-5 py-2 bg-[#044F41] '>
 					<div className='text-white text-center'>
 						<h1 className='text-2xl font-bold tracking-widest'>
-							Welcome Back!
+							Join us Today!
 						</h1>
-						<h1 className='tracking-wide'>Log in to access your account.</h1>
+						<h1 className='tracking-wide'>Sign up now to become a member.</h1>
 					</div>
-					<form className='flex flex-col gap-4 '>
+					<form className='flex flex-col gap-5 '>
 						<div>
-							<Label className='text-white'>Email</Label>
-							<TextInput
+							<InputField
+								name='name'
+								type='string'
+								placeholder='Enter your full name'
+							/>
+							<InputField
+								name='Birth Date'
+								type='date'
+								placeholder='Enter your date of birth'
+							/>
+							<InputField
+								name='email'
 								type='email'
 								placeholder='Enter your email address'
-								required
 							/>
+							<div className='flex items-end gap-2'>
+								<InputField
+									name='password'
+									type='password'
+									placeholder='Choose a password'
+								/>
+								<InputField
+									name=''
+									type='password'
+									placeholder='Re-enter password'
+								/>
+							</div>
 						</div>
-						<div>
-							<Label className='text-white'>Password</Label>
-							<TextInput
-								type='password'
-								placeholder='Enter your password'
-								required
-							/>
-						</div>
-						<div className='flex items-center gap-2'>
-							<Checkbox />
-							<Label className='text-white'>Remember me</Label>
-						</div>
+
 						<Button
 							className='bg-[#FFD21D] text-black font-bold tracking-wide'
 							type='submit'>
-							Submit
+							Signup
 						</Button>
 					</form>
 				</Card>

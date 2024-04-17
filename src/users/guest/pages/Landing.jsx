@@ -4,7 +4,7 @@ import TopBar from '../components/TopBar';
 export default function Index() {
 	return (
 		<div className=''>
-			<TopBar />
+			<TopBar isDisabled={false} />
 		</div>
 	);
 }

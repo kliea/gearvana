@@ -3,7 +3,7 @@ import { Navbar, Button, TextInput } from 'flowbite-react';
 import { Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-export default function TopBar() {
+export default function TopBar({ isDisabled }) {
 	const navigate = useNavigate();
 	return (
 		<>
@@ -29,7 +29,8 @@ export default function TopBar() {
 					}}
 					gradientMonochrome='success'
 					className='tracking-widest'
-					pill>
+					pill
+					disabled={isDisabled}>
 					LOGIN
 				</Button>
 			</Navbar>

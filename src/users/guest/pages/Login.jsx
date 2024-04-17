@@ -2,12 +2,13 @@ import React from 'react';
 import TopBar from '../components/TopBar';
 import { Card, Label, TextInput, Checkbox, Button } from 'flowbite-react';
 import { useNavigate } from 'react-router-dom';
+import InputField from '../components/InputField';
 
 export default function Login() {
 	const navigate = useNavigate();
 	return (
 		<main className='min-h-screen flex flex-col'>
-			<TopBar />
+			<TopBar isDisabled={true} />
 			<div className='flex-1 flex justify-center items-center '>
 				<Card className='px-5 py-2 bg-[#044F41] '>
 					<div className='text-white text-center'>
@@ -19,22 +20,16 @@ export default function Login() {
 						</h1>
 					</div>
 					<form className='flex flex-col gap-4 '>
-						<div>
-							<Label className='text-white'>Email</Label>
-							<TextInput
-								type='email'
-								placeholder='Enter your email address'
-								required
-							/>
-						</div>
-						<div>
-							<Label className='text-white'>Password</Label>
-							<TextInput
-								type='password'
-								placeholder='Enter your password'
-								required
-							/>
-						</div>
+						<InputField
+							name='email'
+							type='email'
+							placeholder='Enter your email address'
+						/>
+						<InputField
+							name='password'
+							type='password'
+							placeholder='Enter your password'
+						/>
 						<div className='flex items-center gap-2'>
 							<Checkbox />
 							<Label className='text-white'>Remember me</Label>
@@ -42,7 +37,7 @@ export default function Login() {
 						<Button
 							className='bg-[#FFD21D] text-black font-bold tracking-wide'
 							type='submit'>
-							Submit
+							Login
 						</Button>
 					</form>
 					<div className='py-2 flex items-center gap-2 text-white'>
