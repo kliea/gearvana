@@ -8,7 +8,12 @@ export default function TopBar({ isDisabled }) {
 	return (
 		<>
 			<Navbar className='bg-[#DFE101] py-5 px-20 text-black flex h-full'>
-				<button>LOGO</button>
+				<button
+					onClick={() => {
+						navigate('/');
+					}}>
+					LOGO
+				</button>
 				<TextInput
 					className='w-1/3'
 					type='email'
