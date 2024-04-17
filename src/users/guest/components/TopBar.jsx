@@ -1,8 +1,10 @@
 import React from 'react';
 import { Navbar, Button, TextInput } from 'flowbite-react';
-import { ShoppingCart, Search } from 'lucide-react';
+import { Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function TopBar() {
+	const navigate = useNavigate();
 	return (
 		<>
 			<Navbar className='bg-[#DFE101] py-5 px-20 text-black flex h-full'>
@@ -21,7 +23,13 @@ export default function TopBar() {
 					<button>Pricing</button>
 					<button>Contact</button>
 				</div>
-				<Button gradientMonochrome='success' className='tracking-widest' pill>
+				<Button
+					onClick={() => {
+						navigate('/login');
+					}}
+					gradientMonochrome='success'
+					className='tracking-widest'
+					pill>
 					LOGIN
 				</Button>
 			</Navbar>
