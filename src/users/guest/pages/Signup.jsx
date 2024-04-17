@@ -1,14 +1,16 @@
 import React from 'react';
 import TopBar from '../components/TopBar';
-import { Card, Label, TextInput, Checkbox, Button } from 'flowbite-react';
+import { Card, Button } from 'flowbite-react';
 import InputField from '../components/InputField';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
+	const navigate = useNavigate();
 	return (
 		<main className='min-h-screen flex flex-col'>
 			<TopBar isDisabled={false} />
 			<div className='flex-1 flex justify-center items-center '>
-				<Card className='px-5 py-2 bg-[#044F41] '>
+				<Card className='px-5 py-2 bg-[#044F41] w-1/3'>
 					<div className='text-white text-center'>
 						<h1 className='text-2xl font-bold tracking-widest'>
 							Join us Today!
@@ -47,11 +49,21 @@ export default function Signup() {
 						</div>
 
 						<Button
-							className='bg-[#FFD21D] text-black font-bold tracking-wide'
+							className='bg-[#FFD21D] enabled:hover:bg-yellow-100 text-black font-bold tracking-wide'
 							type='submit'>
 							Signup
 						</Button>
 					</form>
+					<div className='py-2 flex items-center gap-2 text-white'>
+						<h1 className='text-gray-200'>Already a member?</h1>
+						<button
+							className='text-yellow-200 '
+							onClick={() => {
+								navigate('/login');
+							}}>
+							Login Here
+						</button>
+					</div>
 				</Card>
 			</div>
 		</main>

@@ -10,7 +10,7 @@ export default function Login() {
 		<main className='min-h-screen flex flex-col'>
 			<TopBar isDisabled={true} />
 			<div className='flex-1 flex justify-center items-center '>
-				<Card className='px-5 py-2 bg-[#044F41] '>
+				<Card className='px-5 py-2 bg-[#044F41] w-1/3'>
 					<div className='text-white text-center'>
 						<h1 className='text-2xl font-bold tracking-widest'>
 							Welcome Back!
@@ -19,7 +19,7 @@ export default function Login() {
 							Log in to access your account.
 						</h1>
 					</div>
-					<form className='flex flex-col gap-4 '>
+					<form className='flex flex-col gap-2 '>
 						<InputField
 							name='email'
 							type='email'
@@ -35,7 +35,7 @@ export default function Login() {
 							<Label className='text-white'>Remember me</Label>
 						</div>
 						<Button
-							className='bg-[#FFD21D] text-black font-bold tracking-wide'
+							className='mt-2 bg-[#FFD21D] enabled:hover:bg-yellow-100 text-black font-bold tracking-wide'
 							type='submit'>
 							Login
 						</Button>
